@@ -25,3 +25,6 @@ The PHP file for connecting to the database.
 - Installation of the Website.txt
 This file include detailed instructions for installing BACUS 2.0 to any server.
 Terminology database files are hosted here: https://ddd.uab.cat/record/222594
+
+Here you can access to the current live version of the website:
+http://espanolturco.com/bacus/index_bacus_catalan.php
