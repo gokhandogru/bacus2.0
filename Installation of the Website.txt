@@ -1,0 +1,69 @@
+
+**BACUS 2.0 Installation**
+This document includes all the instructions for installing the website on a web server.
+The website of BACUS 2.0 is built upon a LAMP (Linux, Apache, MySQL, PHP) architecture.
+All tests are performed upon a web hosting service on godaddy.com. Necessary files are released on GitHub with a creative commons license. Following the steps below, you can install a clone of the website on your service, or if you want you can extend the website adding other languages.
+
+
+**The Website**
+
+The website has both backend and frontend components.
+
+--Back-end Requirements--
+
+***Creating/Uploading the Table in the Database***
+
+1- If you want to make minimum changes and use default names and setting, create a table in your database called "bacus_multilingual" and import the content either from the SQL file (bacus_multilingual.sql) or CSV file (bacus_multilingual.csv). You should have a table with 67 Columns. If you would like to add a new language, you can add 3 more columns with the titles of "LanguageName", "LanguageName_Def", "LanguageName_Context". "LanguageName" will include the terms, "LanguageName_Def" will include the definition of the term and "LanguageName_Context" will include the term context, namely an example sentence including the term. We have used PHPMyAdmin to create a database and table in MySQL.
+
+***Connecting to the Database***
+
+2 - The PHP file "db_connect_uab.php" includes the login credentials to connect the front-end to the back-end. Database name, username and password shall be entered here, together with host name. Without these credentials, it is not possible to connect to the database.
+
+
+--Front-End Requirements--
+
+**Style Notes**
+1- The stylistic design of the website follows Material Design principles and make use of the Materialize CSS website's framework (https://materializecss.com/). The its CDN is referenced in the head of the website. These framework includes custom CSS and JavaScript codes. The framework is already compatible with mobile devices. Hence, this made it easy to use the website from mobile devices.
+
+
+2- HTML and PHP is widely used in the front-end. A minimalistic design is followed. 21 landing pages have been built for search in 21 languages. One word or multi-word search is possible. Similarly, 21 search result pages have been created for showing term search results. Each term is shown in card view with its translation into other languagues when available. If the term has more than one instance in other domains (medical, legal etc.), each instance is shown in a different card view. The default home page is the Catalan Language Landing Page.
+
+***Adding new language***
+
+3 - If you want to add a new language, the steps to follow are:
+i). As stated above, create 3 columns for the language in the table in PHPMyAdmin.
+ii). Upload "index_bacus_NEWLANG.php" file to your server. Replace "NEWLANG" with the name of your language. Inside the file, you will see further instructions.
+iii). Upload "buscar_termino_NEWLANG.php" file to your server. Replace "NEWLANG" with the name of your language. Inside the file, you will see further instructions.
+iv). Be careful while referencing to other pages of the website. The names and locations of the files shall be correctly referenced.
+v). Original location of the pages/files are provided in "BACUS 2_0 Website Structure.rar" Uploading the files with the same directory structure will decrease the need for modification.
+
+***Other Files
+
+4 - The "includes" folder has the head, navigation menu and footer files.
+
+5 - Resources page include previous works on BACUS as well as information about BACUS Project.
+
+
+
+**Future**
+This project aimed to create a user interface and a database structure for consulting terms from a multilingual terminology. A further work can be made to let users add terms in the languages that want. This requires user management to track who adds what term; different user roles (user who enters terms, users who validate terms and admins who manage the system etc.)
+An example of the current website is hosted on espanolturco.com:
+Here you can access to the current version of the website:
+http://espanolturco.com/bacus/index_bacus_catalan.php
+In the future, BACUS 2.0 will be hosted on a server of UAB.
+
+
+**License**
+
+The content of the website and the term base files are shared under creative commons license (Attribution 4.0 International (CC BY 4.0)).
+
+
+These instructions are created by Gokhan Dogru.
+Contact: gokhan.dogru@uab.cat
+Twitter: https://twitter.com/gkhn_dgr
+
+
+
+
+
+
